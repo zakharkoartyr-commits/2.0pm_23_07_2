@@ -1,0 +1,15 @@
+<section class="experience">
+  <h2>ДОСВІД</h2>
+
+  @for (job of jobs; track job.position) {
+    <div class="job" (click)="selectJob(job.position)">
+      <p><strong>{{ job.position }}</strong> — {{ job.company }}</p>
+      
+      @if (job.tag === 'ПОДАРУНОК') {
+        <span style="color: orange;">★ Особлива вакансія</span>
+      }
+    </div>
+  } @empty {
+    <p>Список вакансій порожній</p>
+  }
+</section>

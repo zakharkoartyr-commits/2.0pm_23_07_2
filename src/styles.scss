@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+// ЗМІННІ І ШРИФТИ
+$primary-color: #e86142;
+$light-gray-bg: #f0f0f0;
+$dark-text: #2c2c2c;
+$gray-text: #666;
+$border-color: #ddd;
+$font-family: 'Lato', sans-serif;
+
+// ГЛОБАЛЬНІ СТИЛІ
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
