@@ -1,0 +1,15 @@
+<section class="about-me">
+  <h2 (click)="toggle()" class="section-toggle" style="cursor: pointer;">
+    ABOUT ME
+    <i class="fa-solid" [class.fa-chevron-down]="isOpen" [class.fa-chevron-right]="!isOpen"></i>
+  </h2>
+
+  @if (isOpen) {
+    <div class="section-content">
+      <p>
+        Lorem ipsum dolor a consectetur adipiscing elitse eiusmod tempor incididunt 
+        labore dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+      </p>
+    </div>
+  }
+</section>

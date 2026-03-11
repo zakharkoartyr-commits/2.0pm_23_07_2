@@ -1,0 +1,29 @@
+.main-right-wrapper {
+  padding: 45px 65px;
+  background-color: #ffffff;
+
+  .main-header {
+    margin-bottom: 60px;
+    
+    .job-title {
+      display: inline-block;
+      position: relative;
+      font-size: 16px;
+      color: #666;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding-top: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background-color: #e86142;
+        width: 45px;
+      }
+    }
+  }
+}

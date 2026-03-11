@@ -1,0 +1,39 @@
+.experience {
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+  }
+
+  .job {
+    margin-bottom: 30px;
+    &:last-child { margin-bottom: 0; }
+
+    .job-position { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+
+    .job-meta {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      
+      span {
+        border-radius: 5px;
+        padding: 3px 10px;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #e86142; // Помаранчевий тег
+      }
+
+      .company { color: #666; text-transform: uppercase; letter-spacing: 1px; margin-left: 15px; }
+    }
+
+    .job-description { font-size: 15px; color: #666; line-height: 1.7; }
+  }
+}

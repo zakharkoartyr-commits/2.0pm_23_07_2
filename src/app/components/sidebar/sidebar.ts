@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core'; // Додали Input сюди
+import { Component, Input } from '@angular/core';
+import { ContactsComponent } from './contacts/contacts';
+import { HobbiesComponent } from './hobbies/hobbies';
+import { ReferenceComponent } from './reference/reference';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  template: `
-    <div class="sidebar">
-      <h2>{{ name }} {{ lastName }}</h2>
-      <p>Студент групи PM-23</p>
-    </div>
-  `
+  // Обов'язково імпортуємо дітей сюди!
+  imports: [ContactsComponent, HobbiesComponent, ReferenceComponent],
+  templateUrl: './sidebar.html',
+  styleUrl: './sidebar.scss'
 })
 export class Sidebar {
-  @Input() name: string = ''; // Вже є
-  @Input() lastName: string = ''; // ДОДАЙ ЦЕЙ РЯДОК, щоб виправити помилку NG8002
+  @Input() firstName: string = '';
+  @Input() lastName: string = '';
 }

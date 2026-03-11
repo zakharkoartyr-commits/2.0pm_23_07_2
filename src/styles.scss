@@ -1,14 +1,22 @@
-// ЗМІННІ І ШРИФТИ
-$primary-color: #e86142;
-$light-gray-bg: #f0f0f0;
-$dark-text: #2c2c2c;
-$gray-text: #666;
-$border-color: #ddd;
-$font-family: 'Lato', sans-serif;
-
-// ГЛОБАЛЬНІ СТИЛІ
-* {
-  box-sizing: border-box;
+// Глобальні шрифти та скидання стилів
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #e0e0e0;
   margin: 0;
   padding: 0;
 }
+
+// Контейнер білого аркуша
+.resume-container {
+  display: flex; // Робимо ліву та праву колонку поруч
+  width: 900px;
+  min-height: 1208px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+// Задаємо пропорції колонок
+app-sidebar { flex: 0 0 33%; }
+app-main-content { flex: 1; }

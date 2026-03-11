@@ -1,10 +1,15 @@
-<div class="resume-container">
-  <app-sidebar [name]="firstName" [lastName]="lastName"></app-sidebar>
+<div style="background: yellow; padding: 50px; border: 10px solid black;">
+  <h1>ЦЕ ПЕРЕВІРКА ANGULAR</h1>
+  <p>Якщо ти бачиш цей жовтий блок, то AppComponent працює!</p>
   
-  <main class="right-column">
-    <app-experience 
-      [jobs]="experienceData" 
-      (onSelect)="handleJobSelection($event)">
-    </app-experience>
-  </main>
+  <hr>
+  
+  <app-sidebar 
+    [firstName]="profileData.firstName" 
+    [lastName]="profileData.lastName">
+  </app-sidebar>
+
+  <app-main-content 
+    [jobsData]="experienceList">
+  </app-main-content>
 </div>

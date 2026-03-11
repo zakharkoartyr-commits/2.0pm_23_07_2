@@ -1,0 +1,17 @@
+.resume-container {
+  display: flex;
+  width: 1000px;
+  margin: 40px auto;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  min-height: 1200px;
+}
+
+app-sidebar {
+  flex: 0 0 35%; // 35% ширини
+  background-color: #f4f4f4;
+}
+
+app-main-content {
+  flex: 1; // Все інше місце
+}

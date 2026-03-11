@@ -1,47 +1,25 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Додаємо цей модуль про всяк випадок
 import { Sidebar } from './components/sidebar/sidebar';
-import { Experience } from './components/experience/experience';
+import { MainContent } from './components/main-content(r)/main-content';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Sidebar, Experience],
-  template: `
-    <div class="resume-container">
-      <app-sidebar [name]="firstName" [lastName]="lastName"></app-sidebar>
-
-      <main class="right-column">
-        <div class="skills">
-          <h3>Навички:</h3>
-          <ul>
-            @for (skill of ['HTML', 'SCSS', 'Angular']; track skill) {
-              <li>{{ skill }}</li>
-            }
-          </ul>
-
-          @if (firstName === 'Джон') {
-            <p>Студент групи PM-23 авторизований</p>
-          }
-        </div>
-
-        <app-experience 
-          [jobs]="experienceData" 
-          (onJobSelect)="handleJobClick($event)">
-        </app-experience>
-      </main>
-    </div>
-  `
+  // ВАЖЛИВО: Перевір, щоб назви Sidebar та MainContent збігалися з імпортом вище
+  imports: [CommonModule, Sidebar, MainContent], 
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
 export class AppComponent {
-  firstName = 'Джон';
-  lastName = 'АБІРАР';
+  profileData = {
+    firstName: 'Jhon',
+    lastName: 'ABIRAR',
+    jobTitle: 'UI DESIGNER'
+  };
 
-  experienceData = [
-    { position: 'Дизайнер', company: 'Google' },
-    { position: 'Розробник', company: 'Amazon' }
+  experienceList = [
+    { position: 'Senior UI Designer', company: 'Google', tag: 'Present', description: 'Working on material design system...' },
+    { position: 'Web Developer', company: 'Amazon', tag: '2017-2019', description: 'Developed responsive frontend components...' }
   ];
-
-  handleJobClick(event: any) {
-    alert('Output спрацював! Вибрано вакансію: ' + event);
-  }
 }
