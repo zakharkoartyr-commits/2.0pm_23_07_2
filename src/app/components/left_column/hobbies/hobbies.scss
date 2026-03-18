@@ -1,0 +1,25 @@
+// hobbies.scss
+.hobbies {
+  h3 { font-weight: 800; margin-bottom: 20px; }
+  
+  .hobbies-list {
+    display: flex;           // СТАВИТЬ ІКОНКИ В РЯД
+    justify-content: space-between;
+    text-align: center;
+
+    .hobby-item {
+      font-size: 10px;
+      color: #777;
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px; height: 35px;
+        border: 2px solid #e86142;
+        border-radius: 50%;
+        color: #e86142;
+        margin: 0 auto 8px;
+      }
+    }
+  }
+}

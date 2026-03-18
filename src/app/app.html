@@ -1,15 +1,10 @@
-<div style="background: yellow; padding: 50px; border: 10px solid black;">
-  <h1>ЦЕ ПЕРЕВІРКА ANGULAR</h1>
-  <p>Якщо ти бачиш цей жовтий блок, то AppComponent працює!</p>
-  
-  <hr>
-  
-  <app-sidebar 
+<div class="resume-container">
+  <app-left_column 
     [firstName]="profileData.firstName" 
     [lastName]="profileData.lastName">
-  </app-sidebar>
-
-  <app-main-content 
+  </app-left_column>
+  
+  <app-right_column 
     [jobsData]="experienceList">
-  </app-main-content>
+  </app-right_column>
 </div>

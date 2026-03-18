@@ -1,0 +1,11 @@
+// photo.scss
+.photo-container {
+  .orange-bar {
+    height: 12px;
+    background-color: #e86142; // Твій помаранчевий
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+}

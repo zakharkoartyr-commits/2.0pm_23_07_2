@@ -1,33 +1,39 @@
 <section class="expertise">
+  <div class="section-toggle" (click)="toggle()" [class.active]="isExpanded">
   <h2>EXPERTISE</h2>
+  <i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="section-content" [class.hidden]="!isExpanded">
+   </div>
   
   <div class="expertise-list">
     <div class="expertise-item">
       <div class="chart-container">
         <canvas id="chartPhotoshop"></canvas>
-        <span class="label">Adobe<br>Photoshop</span>
       </div>
+      <span>Adobe<br>Photoshop</span>
     </div>
 
     <div class="expertise-item">
       <div class="chart-container">
         <canvas id="chartIllustrator"></canvas>
-        <span class="label">Adobe<br>Illustrator</span>
       </div>
+      <span>Adobe<br>Illustrator</span>
     </div>
 
     <div class="expertise-item">
       <div class="chart-container">
         <canvas id="chartInDesign"></canvas>
-        <span class="label">Adobe<br>InDesign</span>
       </div>
+      <span>Adobe<br>InDesign</span>
     </div>
 
     <div class="expertise-item">
       <div class="chart-container">
         <canvas id="chartPowerPoint"></canvas>
-        <span class="label">Power<br>Point</span>
       </div>
+      <span>Power<br>Point</span>
     </div>
   </div>
 </section>

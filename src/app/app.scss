@@ -1,17 +1,25 @@
+// app.scss
 .resume-container {
   display: flex;
-  width: 1000px;
-  margin: 40px auto;
+  align-items: stretch;
+  width: 900px;
+  min-height: 1050px; // Зменшили висоту, щоб не було порожнечі знизу
+  height: auto; 
+  margin: 30px auto;
+  padding-left: 55px; // Та сама біла смужка
   background-color: white;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  min-height: 1200px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-app-sidebar {
-  flex: 0 0 35%; // 35% ширини
-  background-color: #f4f4f4;
+app-left_column {
+  flex: 32;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
 }
 
-app-main-content {
-  flex: 1; // Все інше місце
+app-right_column {
+  flex: 68;
+  background-color: white;
 }

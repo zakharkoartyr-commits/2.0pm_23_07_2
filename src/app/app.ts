@@ -1,22 +1,25 @@
+// app.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Додаємо цей модуль про всяк випадок
-import { Sidebar } from './components/sidebar/sidebar';
-import { MainContent } from './components/main-content(r)/main-content';
+import { CommonModule } from '@angular/common';
+
+// Зміни тут назви на LeftColumn та RightColumn (з великої літери)
+import { LeftColumn } from './components/left_column/left_column'; 
+import { RightColumn } from './components/right_column/right_column'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // ВАЖЛИВО: Перевір, щоб назви Sidebar та MainContent збігалися з імпортом вище
-  imports: [CommonModule, Sidebar, MainContent], 
+  // Тут теж назви мають бути з великої літери
+  imports: [CommonModule, LeftColumn, RightColumn], 
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class AppComponent {
-  profileData = {
-    firstName: 'Jhon',
-    lastName: 'ABIRAR',
-    jobTitle: 'UI DESIGNER'
-  };
+  // app.ts
+profileData = {
+  firstName: 'Jhon',
+  lastName: 'ABIRAR'
+};
 
   experienceList = [
     { position: 'Senior UI Designer', company: 'Google', tag: 'Present', description: 'Working on material design system...' },

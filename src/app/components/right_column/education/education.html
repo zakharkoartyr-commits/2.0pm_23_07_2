@@ -1,0 +1,23 @@
+<section class="education-section">
+  <div class="section-toggle" (click)="toggle()" [class.active]="isExpanded">
+    <h2>EDUCATION</h2> <i class="fa-solid fa-chevron-down"></i> </div>
+
+  <div class="section-content" [class.hidden]="!isExpanded">
+  </div>
+
+  <div class="section-content" [class.hidden]="!isExpanded">
+    <div class="education-entries">
+      <div class="entry">
+        <p class="major">ENTER YOUR MAJOR</p>
+        <p class="university">Name Of Your University</p>
+        <p class="years">2005-2009</p>
+      </div>
+
+      <div class="entry">
+        <p class="major">ENTER YOUR MAJOR</p>
+        <p class="university">Name Of Your University</p>
+        <p class="years">2009-2011</p>
+      </div>
+    </div>
+  </div>
+</section>

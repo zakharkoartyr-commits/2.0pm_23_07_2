@@ -1,0 +1,165 @@
+// right_column.scss
+
+.right-column-wrapper {
+  padding: 60px 50px;
+  background-color: white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; // Мінімальний глобальний розрив між секціями
+
+  // 1. ЗАГОЛОВОК З ІМ'ЯМ
+  .main-header {
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 72px; 
+      font-weight: 900;
+      line-height: 0.85;
+      color: #2c2c2c;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+
+      .last-name {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+
+    .job-title-container {
+      .orange-line {
+        width: 45px;
+        height: 5px;
+        background-color: #e86142;
+        margin-bottom: 12px;
+      }
+
+      .job-title {
+        font-size: 15px;
+        color: #666;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // 2. СЕКЦІЇ (ABOUT, EDUCATION, EXPERIENCE, EXPERTISE)
+  section {
+    margin-bottom: 25px; // Відступ між секціями
+
+    // Заголовок секції зі стрілочкою
+    .section-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eeeeee;
+      padding-bottom: 8px;
+      margin-bottom: 12px; // ВІДСТУП ДО КОНТЕНТУ (~0.5 см)
+      cursor: pointer;
+
+      h2 {
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 0;
+        border: none;
+      }
+
+      // Стилізована стрілочка
+      i {
+        color: #e86142;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    // Текст всередині секцій
+    .section-content {
+      p, .job-description {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  // 3. СПЕЦІАЛЬНІ СТИЛІ ДЛЯ EDUCATION (Два стовпчики)
+  .education-entries {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    .entry {
+      flex: 1;
+      .major { font-weight: 800; font-size: 15px; margin-bottom: 5px; text-transform: uppercase;}
+      .university { color: #666; font-size: 14px; margin-bottom: 3px; }
+      .years { font-size: 13px; color: #999; }
+    }
+  }
+
+  // 4. СЕКЦІЯ EXPERTISE (Кружечки з текстом по центру)
+  .expertise-list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+
+    .expertise-item {
+      position: relative; // База для центрування тексту всередині
+      width: 85px;
+      height: 85px;
+
+      canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      // ТЕКСТ ІДЕАЛЬНО ПО ЦЕНТРУ КРУГА
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        width: 90%;
+        text-align: center;
+        font-size: 9px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.1;
+        color: #333;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// 5. ТЕГИ ДЛЯ ДОСВІДУ (EXPERIENCE)
+.job-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+  .tag {
+    background-color: #e86142;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+  
+  .company {
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+  }
+}
