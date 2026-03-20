@@ -1,0 +1,102 @@
+// left_column.scss
+.address-section {
+  // Відступи: зверху 35px (~1см), по бокам 20px (~0.5см), знизу 35px (~1см)
+  padding: 35px 20px; 
+  background-color: #f2f2f2; // Сірий фон колонки
+  
+  h3 {
+    color: #e86142;        // Помаранчевий колір тільки для слова ADDRESS
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;    // Маленький відступ між заголовком і текстом
+  }
+
+  p {
+    color: #666;           // Сірий колір для самої адреси
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+}
+
+// Щоб між цим блоком і фото був чіткий сантиметр, додаємо margin компоненту фото
+app-photo {
+  display: block;
+  margin-top: 0; 
+}
+.sidebar-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+
+  .sidebar-content {
+    padding: 0 45px 40px 45px; // Відступи від країв
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // Всі блоки туляться до верху
+    
+    // ВІДСТУП ВІД ФОТО ДО ПЕРШОЇ СЕКЦІЇ (CONTACT)
+    margin-top: 35px; 
+
+    section {
+      // ВІДСТУП МІЖ СЕКЦІЯМИ (Contact -> Reference -> Hobbies)
+      margin-bottom: 45px; 
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 900;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px; // Відступ від заголовка до першого пункту
+    }
+
+    .contact-item, .reference-item {
+      margin-bottom: 15px; // Відступ між Phone та Email всередині секції
+      
+      strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 800;
+        color: #2c2c2c;
+        margin-bottom: 2px;
+      }
+      
+      span, p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.3;
+      }
+    }
+  }
+}
+
+// Хобі залишаємо компактними
+.hobbies-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 220px; // Обмежуємо ширину, щоб вони не розліталися
+
+  .hobby-item {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 2px solid #e86142;
+      border-radius: 50%;
+      color: #e86142;
+      margin: 0 auto 8px;
+      font-size: 16px;
+    }
+  }
+}

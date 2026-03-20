@@ -1,0 +1,42 @@
+<section class="experience-wrapper">
+  <div class="header-container">
+    <div class="icon-circle">
+      <i class="fa fa-briefcase"></i> </div>
+    <h3>EXPERIENCE</h3>
+  </div>
+
+  <div class="orange-line"></div>
+
+  <div class="experience-list">
+    @if (jobs && jobs.length > 0) {
+      
+      @for (job of jobs; track job.position; let i = $index) {
+        <div class="experience-item">
+          <div class="job-header">
+            <h4 class="position">{{ job.position }}</h4>
+            
+            <span class="badge" [ngClass]="job.tagType">
+              {{ job.tag }}
+            </span>
+          </div>
+
+          <p class="company">{{ job.company }}</p>
+          <p class="description">{{ job.description }}</p>
+
+          <button class="delete-btn" (click)="onDelete(job.position)">
+            Видалити запис
+          </button>
+          
+          @if (i < jobs.length - 1) {
+            <hr class="item-divider">
+          }
+        </div>
+      }
+
+    } @else {
+      <div class="empty-state">
+        <p>Інформація про досвід роботи відсутня або завантажується...</p>
+      </div>
+    }
+  </div>
+</section>

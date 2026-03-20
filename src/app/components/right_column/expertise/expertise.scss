@@ -1,0 +1,57 @@
+// expertise.scss
+
+.expertise {
+  .expertise-list {
+    display: flex;
+    justify-content: space-between; // Розподіляє 4 кружки в ряд
+    align-items: flex-start;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .expertise-item {
+    // ВІДНОВЛЮЄМО ВІДНОСНЕ ПОЗИЦІЮВАННЯ ДЛЯ ТЕКСТУ
+    position: relative; 
+    
+    // ЗБІЛЬШУЄМО РОЗМІР КОНТЕЙНЕРА
+    width: 90px; 
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // ОБГОРТКА ДЛЯ КАНВАСУ (Графіка)
+    .chart-container {
+      position: absolute; // Вириваємо графік
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1; // Графік знизу
+
+      canvas {
+        // УВАГА: приберіть тут width/height !important,
+        // Chart.js сам їх проставить
+        display: block;
+      }
+    }
+
+    // ТЕКСТ ВСЕРЕДИНІ КРУГА
+    span {
+      position: absolute; // Текст зверху
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); // Ідеальний центр
+      
+      width: 90%; // Щоб не торкався країв
+      text-align: center;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: #333;
+      pointer-events: none; // Щоб можна було клікати крізь текст
+      z-index: 2; // Текст над графіком
+    }
+  }
+}

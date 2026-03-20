@@ -1,0 +1,30 @@
+// education.scss
+
+.education-entries {
+  display: flex;         // СТАВИТЬ БЛОКИ В ОДИН РЯД
+  justify-content: space-between; // Робить відступ між ними
+  gap: 40px;             // Чіткий проміжок між колонками
+  margin-top: 15px;
+
+  .entry {
+    flex: 1;             // Робить обидві колонки однаковими за шириною
+    
+    .major {
+      font-weight: 850;
+      font-size: 15px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .university {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .years {
+      font-size: 13px;
+      color: #999;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<section class="hobbies">
+    <h3>HOBBIES</h3>
+    <div class="hobbies-list">
+        @for (hobby of hobbies; track hobby.name) {
+            <div class="hobby-item">
+                <i class="fa-solid" [class]="hobby.icon"></i>
+                <span>{{ hobby.name }}</span>
+            </div>
+        }
+    </div>
+</section>

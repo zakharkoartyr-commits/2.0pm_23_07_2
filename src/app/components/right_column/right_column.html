@@ -1,0 +1,32 @@
+<main class="right-column-wrapper" *ngIf="resumeData; else loading">
+  <header class="main-header">
+    <h1>
+      {{ resumeData.personalData?.firstName }}<br>
+      <span class="last-name">{{ resumeData.personalData?.lastName }}</span>
+    </h1>
+
+    <div class="job-title-container">
+      <div class="orange-line"></div>
+      <p class="job-title">{{ resumeData.personalData?.jobTitle }}</p>
+    </div>
+  </header>
+
+  <app-about></app-about>
+  <app-education></app-education>
+  <app-experience></app-experience>
+  <app-expertise></app-expertise>
+
+  <button (click)="updateDataOnServer()" class="update-btn">
+    Оновити дані на сервері
+  </button>
+
+  <p *ngIf="errorMessage" class="error-msg">
+    {{ errorMessage }}
+  </p>
+</main>
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    <p>Завантаження даних з сервера Node.js...</p>
+  </div>
+</ng-template>
