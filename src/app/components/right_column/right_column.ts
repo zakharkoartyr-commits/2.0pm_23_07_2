@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about/about';
 import { EducationComponent } from './education/education';
-import { Experience } from './experience/experience'; // Перевір, щоб назва класу була Experience
+import { Experience } from './experience/experience'; 
 import { ExpertiseComponent } from './expertise/expertise';
 import { ResumeService } from '../../services/resume';
 
@@ -11,7 +10,6 @@ import { ResumeService } from '../../services/resume';
   standalone: true,
   imports: [
     CommonModule, 
-    AboutComponent, 
     EducationComponent, 
     Experience, 
     ExpertiseComponent
@@ -23,13 +21,25 @@ export class RightColumn implements OnInit {
   resumeData: any = null;
   errorMessage: string = '';
   
-  // Додаткова змінна для лаби (наприклад, лічильник взаємодій з дитиною)
   childNotificationCount: number = 0;
 
   constructor(private resumeService: ResumeService) {}
 
   ngOnInit(): void {
     this.loadData();
+  }
+
+
+  sections: any = {
+    about: true,
+    education: true,
+    experience: true,
+    expertise: true
+  };
+
+  // Метод для перемикання
+  toggleSection(sectionName: string): void {
+    this.sections[sectionName] = !this.sections[sectionName];
   }
 
   loadData(): void {
@@ -45,12 +55,11 @@ export class RightColumn implements OnInit {
     });
   }
 
-  // МЕТОД ДЛЯ @Output: обробка події від дитини
+
   handleChildAction(eventData: any): void {
     this.childNotificationCount++;
     console.log('Подія від дочірнього компонента:', eventData);
     
-    // Якщо подія — це видалення досвіду (приклад для лаби)
     if (eventData.type === 'deleteExperience') {
       this.resumeData.experience = this.resumeData.experience.filter(
         (item: any) => item.position !== eventData.position

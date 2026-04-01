@@ -11,6 +11,4 @@ import { RightColumn } from './components/right_column/right_column';
   styleUrl: './app.scss'
 })
 export class AppComponent {
-  // Тут тепер порожньо, бо дані для Лаби №3 
-  // завантажуються всередині RightColumn з localhost:3000
 }

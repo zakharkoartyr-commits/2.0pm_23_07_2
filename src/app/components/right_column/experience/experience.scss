@@ -1,13 +1,51 @@
-.exp-section {
-  h2 { font-weight: 900; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-  .job-item {
-    margin-bottom: 25px;
-    h3 { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
-    .meta {
-      display: flex; gap: 15px; align-items: center; margin-bottom: 10px;
-      .tag { background: #e86142; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; text-transform: uppercase; }
-      .company { color: #666; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.experience-item {
+  margin-bottom: 30px; // Відступ між різними роботами
+
+  .position {
+    font-size: 15px;      // Було 17-18px, ставимо 15px для витонченості
+    font-weight: 700;      // Замість 800 або 900
+    color: #2c2c2c;
+    text-transform: uppercase;
+    margin-bottom: 4px;    // Тісніший відступ до бейджа
+    letter-spacing: 0.5px; // Невеликий інтервал між буквами
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center; // Центруємо по вертикалі
+    gap: 12px; // Відступ між бейджем і компанією
+    margin-bottom: 12px; // Відступ перед списком duties
+
+    .badge {
+      background-color: #e86142; // Оранжевий
+      color: white;
+      padding: 3px 10px; // Трохи більше падінгу
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 3px;
+      text-transform: uppercase;
+      line-height: 1.4;
     }
-    p { font-size: 14px; color: #777; line-height: 1.6; }
+
+    .company {
+      font-size: 12px; // Компанія
+      font-weight: 700;
+      color: #888;
+      text-transform: uppercase;
+      margin: 0; // Обнуляємо маргіни
+    }
+  }
+
+  .duties-list {
+    margin: 0;
+    padding-left: 20px; // Відступ для крапочок
+    list-style-type: disc; // Крапочки списку
+
+    li {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
   }
 }

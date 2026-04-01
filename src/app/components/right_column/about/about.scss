@@ -2,19 +2,19 @@
 .about-me {
   h2 {
     display: flex;
-    justify-content: space-between; // Стрілочка праворуч
+    justify-content: space-between; 
     align-items: center;
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 2px;
     color: #2c2c2c;
-    border-bottom: 2px solid #e0e0e0; // Сіра лінія під заголовком
+    border-bottom: 2px solid #e0e0e0; 
     padding-bottom: 15px;
     margin-bottom: 20px;
     cursor: pointer;
 
     i {
-      color: #e86142; // Помаранчева стрілочка
+      color: #e86142; 
       font-size: 14px;
     }
   }

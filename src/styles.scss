@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+// Підключаємо Roboto для елегантності
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,9 +8,17 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  background-color: #e0e0e0;
+  margin: 0;
+  padding: 20px 0; // Менший відступ зверху/знизу
+  background-color: #d1d1d1;
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+}
+
+// Загальний контейнер резюме
+.resume-wrapper {
+  display: flex;
+  width: 900px; // Ширина як на макеті
+  min-height: 100vh; // На всю висоту екрану
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); // Легка тінь
 }

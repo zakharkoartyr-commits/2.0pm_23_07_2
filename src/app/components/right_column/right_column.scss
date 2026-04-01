@@ -1,165 +1,126 @@
-// right_column.scss
+// Файл: right_column.scss
 
 .right-column-wrapper {
-  padding: 60px 50px;
+  // 1. ЗМЕНШУЄМО ПАДІНГИ, щоб колонка була вужчою і компактнішою
+  padding: 50px 35px 30px 35px; // Верх, Право, Низ, Ліво
   background-color: white;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; // Мінімальний глобальний розрив між секціями
+  font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif; // Чистий шрифт
+  box-sizing: border-box;
 
-  // 1. ЗАГОЛОВОК З ІМ'ЯМ
   .main-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px; // Відступ до ABOUT ME
 
     h1 {
-      font-size: 72px; 
-      font-weight: 900;
-      line-height: 0.85;
-      color: #2c2c2c;
+      font-family: 'Times New Roman', Times, serif; // На шаблоні serif шрифт
+      font-size: 65px; // Трохи менше
+      // 2. ЗМЕНШУЄМО ЖИРНІСТЬ І РОБИМО ВІДСТУП МІЖ БУКВАМИ
+      font-weight: 300; // Набагато тонше
+      line-height: 1.0;
+      letter-spacing: 2px; // Розсовуємо букви
+      margin: 0 0 10px 0;
+      color: #333; // Трохи м'якший чорний
       text-transform: uppercase;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-
-      .last-name {
-        display: block;
-        margin-top: 5px;
-      }
+      span { display: block; }
     }
 
-    .job-title-container {
-      .orange-line {
-        width: 45px;
-        height: 5px;
-        background-color: #e86142;
-        margin-bottom: 12px;
-      }
-
-      .job-title {
-        font-size: 15px;
-        color: #666;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
+    .job-title {
+      font-size: 14px;
+      // 3. ЗБІЛЬШУЄМО ІНТЕРВАЛ для job title
+      letter-spacing: 5px; 
+      text-transform: uppercase;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
     }
   }
 
-  // 2. СЕКЦІЇ (ABOUT, EDUCATION, EXPERIENCE, EXPERTISE)
-  section {
-    margin-bottom: 25px; // Відступ між секціями
+  .collapsible-section {
+    margin-bottom: 30px; // Відступ між секціями
 
-    // Заголовок секції зі стрілочкою
-    .section-toggle {
+    .section-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; // Текст зліва, стрілка справа
       align-items: center;
-      border-bottom: 2px solid #eeeeee;
-      padding-bottom: 8px;
-      margin-bottom: 12px; // ВІДСТУП ДО КОНТЕНТУ (~0.5 см)
       cursor: pointer;
+      border-bottom: 1.5px solid #eaeaea; // Тонша лінія
+      padding-bottom: 6px; // Тісніше до лінії
+      margin-bottom: 15px; // Відступ до контенту
 
-      h2 {
-        font-size: 18px;
-        font-weight: 900;
+      h3 {
+        font-family: 'Inter', sans-serif;
+        // 4. ЗМЕНШУЄМО ЗАГОЛОВКИ СЕКЦІЙ
+        font-size: 15px; // На шаблоні вони маленькі
+        font-weight: 700; // Жирність залишаємо
         text-transform: uppercase;
         letter-spacing: 1.5px;
+        color: #2c2c2c;
         margin: 0;
-        border: none;
+        border-bottom: none !important;
       }
 
-      // Стилізована стрілочка
-      i {
-        color: #e86142;
-        font-size: 12px;
+      .arrow-icon {
+        color: #e86142; // Помаранчевий
+        font-size: 12px; // Маленька стрілочка
         transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+
+        &.rotated {
+          transform: rotate(180deg); // Поворот вгору
+        }
         
-        &.active {
-          transform: rotate(180deg);
+        i {
+          display: inline-block !important;
         }
       }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
-    // Текст всередині секцій
     .section-content {
-      p, .job-description {
-        font-size: 14px;
-        color: #555;
-        line-height: 1.6;
-      }
-    }
-  }
+      animation: fadeIn 0.4s ease;
 
-  // 3. СПЕЦІАЛЬНІ СТИЛІ ДЛЯ EDUCATION (Два стовпчики)
-  .education-entries {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-
-    .entry {
-      flex: 1;
-      .major { font-weight: 800; font-size: 15px; margin-bottom: 5px; text-transform: uppercase;}
-      .university { color: #666; font-size: 14px; margin-bottom: 3px; }
-      .years { font-size: 13px; color: #999; }
-    }
-  }
-
-  // 4. СЕКЦІЯ EXPERTISE (Кружечки з текстом по центру)
-  .expertise-list {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-
-    .expertise-item {
-      position: relative; // База для центрування тексту всередині
-      width: 85px;
-      height: 85px;
-
-      canvas {
-        width: 100% !important;
-        height: 100% !important;
-      }
-
-      // ТЕКСТ ІДЕАЛЬНО ПО ЦЕНТРУ КРУГА
-      span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
-        width: 90%;
-        text-align: center;
-        font-size: 9px;
-        font-weight: 800;
-        text-transform: uppercase;
-        line-height: 1.1;
-        color: #333;
-        pointer-events: none;
+      // 5. НАЛАШТУВАННЯ ТЕКСТУ ABOUT ME
+      p.about-text {
+        font-size: 13.5px;
+        line-height: 1.6; // Більший інтервал для читабельності
+        color: #666;
+        margin: 0 0 20px 0;
       }
     }
   }
 }
 
-// 5. ТЕГИ ДЛЯ ДОСВІДУ (EXPERIENCE)
-.job-meta {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  
-  .tag {
-    background-color: #e86142;
-    color: white;
-    font-size: 10px;
-    font-weight: 900;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-right: 15px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// 6. СТИЛІ ДЛЯ ДОЧІРНІХ КОМПОНЕНТІВ (щоб підігнати шрифти)
+::ng-deep {
+  // Шрифт для досвіду/освіти
+  .experience-item, .education-item {
+    .position, .degree {
+      font-size: 15px; // Зменшуємо
+      font-weight: 700;
+      color: #333;
+    }
+    .company, .university {
+      font-size: 13px;
+      color: #888;
+    }
+    .duties-list li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #666;
+    }
   }
-  
-  .company {
-    font-size: 12px;
-    font-weight: 700;
+
+  // Шрифт для експертизи
+  .expertise-list li {
+    font-size: 13px;
     color: #666;
-    text-transform: uppercase;
   }
 }

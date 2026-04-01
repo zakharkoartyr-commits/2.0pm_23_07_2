@@ -1,32 +1,60 @@
-<main class="right-column-wrapper" *ngIf="resumeData; else loading">
+<div class="right-column-wrapper">
   <header class="main-header">
     <h1>
-      {{ resumeData.personalData?.firstName }}<br>
-      <span class="last-name">{{ resumeData.personalData?.lastName }}</span>
+      <span class="first-name">{{ resumeData?.personalData?.firstName }}</span>
+      <span class="last-name">{{ resumeData?.personalData?.lastName }}</span>
     </h1>
-
     <div class="job-title-container">
       <div class="orange-line"></div>
-      <p class="job-title">{{ resumeData.personalData?.jobTitle }}</p>
+      <p class="job-title">{{ resumeData?.personalData?.jobTitle }}</p>
     </div>
   </header>
 
-  <app-about></app-about>
-  <app-education></app-education>
-  <app-experience></app-experience>
-  <app-expertise></app-expertise>
+  <section class="collapsible-section">
+    <div class="section-header" (click)="toggleSection('about')">
+      <h3>ABOUT ME</h3>
+      <span class="arrow-icon" [class.rotated]="sections.about">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    </div>
+    <div class="section-content" *ngIf="sections.about">
+      <p class="about-text">{{ resumeData?.personalData?.aboutMe }}</p>
+    </div>
+  </section>
 
-  <button (click)="updateDataOnServer()" class="update-btn">
-    Оновити дані на сервері
-  </button>
+  <section class="collapsible-section">
+    <div class="section-header" (click)="toggleSection('education')">
+      <h3>EDUCATION</h3>
+      <span class="arrow-icon" [class.rotated]="sections.education">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    </div>
+    <div class="section-content" *ngIf="sections.education">
+      <app-education></app-education>
+    </div>
+  </section>
 
-  <p *ngIf="errorMessage" class="error-msg">
-    {{ errorMessage }}
-  </p>
-</main>
+  <section class="collapsible-section">
+    <div class="section-header" (click)="toggleSection('experience')">
+      <h3>EXPERIENCE</h3>
+      <span class="arrow-icon" [class.rotated]="sections.experience">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    </div>
+    <div class="section-content" *ngIf="sections.experience">
+      <app-experience [jobs]="resumeData?.experience"></app-experience>
+    </div>
+  </section>
 
-<ng-template #loading>
-  <div class="loading-spinner">
-    <p>Завантаження даних з сервера Node.js...</p>
-  </div>
-</ng-template>
+  <section class="collapsible-section">
+    <div class="section-header" (click)="toggleSection('expertise')">
+      <h3>EXPERTISE</h3>
+      <span class="arrow-icon" [class.rotated]="sections.expertise">
+        <i class="fa fa-chevron-down"></i>
+      </span>
+    </div>
+    <div class="section-content" *ngIf="sections.expertise">
+      <app-expertise></app-expertise>
+    </div>
+  </section>
+</div>

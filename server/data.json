@@ -3,22 +3,24 @@
     "firstName": "Jhon",
     "lastName": "ABIRAR",
     "jobTitle": "Senior UI/UX Designer",
-    "referenceName": "Sara Taylore (Loaded via AJAX)"
+    "aboutMe": "Lorem ipsum dolor a consectetur adipiscing elitse eiusmod tempor incididunt labore dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo."
   },
   "experience": [
     {
       "position": "Senior UI Designer",
       "tag": "Present",
-      "tagType": "present",
       "company": "Google / California",
-      "description": "Working on material design system and creating user-centered interfaces for global products."
+      "duties": [
+        "Working on material design system and creating user-centered interfaces for global products."
+      ]
     },
     {
       "position": "Web Developer",
       "tag": "2017 - 2019",
-      "tagType": "years",
       "company": "Amazon / Seattle",
-      "description": "Developed responsive frontend components and optimized web performance for high-traffic pages."
+      "duties": [
+        "Developed responsive frontend components and optimized web performance for high-traffic pages."
+      ]
     }
   ]
 }

@@ -4,12 +4,16 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-app.use(cors());
-app.use(express.json()); // ЦЕ ОБОВ'ЯЗКОВО для роботи з JSON
+app.use(cors({
+    origin: '*', // Дозволяє запити з будь-якого домену
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+app.use(express.json()); 
 
 const DATA_PATH = path.join(__dirname, 'data.json');
 
-// Отримання даних
+
 app.get('/api/resume', (req, res) => {
     fs.readFile(DATA_PATH, 'utf8', (err, data) => {
         if (err) return res.status(500).json({ error: "Файл не знайдено" });
@@ -17,7 +21,6 @@ app.get('/api/resume', (req, res) => {
     });
 });
 
-// Збереження даних (Додай це, якщо ще немає)
 app.post('/api/resume', (req, res) => {
     const updatedData = req.body;
     fs.writeFile(DATA_PATH, JSON.stringify(updatedData, null, 2), (err) => {
