@@ -1,15 +1,10 @@
-<section class="about-me">
-  <h2 (click)="toggle()" class="section-toggle" style="cursor: pointer;">
-    ABOUT ME
-    <i class="fa-solid" [class.fa-chevron-down]="isOpen" [class.fa-chevron-right]="!isOpen"></i>
-  </h2>
+<section class="collapsible-section">
+  <div class="section-header" (click)="toggleSection()">
+    <h3>ABOUT ME</h3>
+    <span class="arrow-icon" [class.rotated]="!isOpen">▲</span>
+  </div>
 
-  @if (isOpen) {
-    <div class="section-content">
-      <p>
-        Lorem ipsum dolor a consectetur adipiscing elitse eiusmod tempor incididunt 
-        labore dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-      </p>
-    </div>
-  }
+  <div class="section-content" *ngIf="isOpen">
+    <p>{{ text }}</p>
+  </div>
 </section>

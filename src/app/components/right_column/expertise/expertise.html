@@ -1,39 +1,40 @@
-<section class="expertise">
-  <div class="section-toggle" (click)="toggle()" [class.active]="isExpanded">
-  <h2>EXPERTISE</h2>
-  <i class="fa-solid fa-chevron-down"></i>
-</div>
+<section class="collapsible-section">
+  <div class="section-header" (click)="toggleSection()">
+    <h3>EXPERTISE</h3>
+    <span class="arrow-icon" [class.rotated]="!isOpen">▲</span>
+  </div>
 
-<div class="section-content" [class.hidden]="!isExpanded">
-   </div>
-  
-  <div class="expertise-list">
-    <div class="expertise-item">
-      <div class="chart-container">
-        <canvas id="chartPhotoshop"></canvas>
+  <div class="section-content" [style.display]="isOpen ? 'block' : 'none'">
+    <div class="expertise-grid">
+      
+      <div class="expertise-item">
+        <div class="chart-box">
+          <canvas id="chartPhotoshop"></canvas>
+        </div>
+        <span>ADOBE<br>PHOTOSHOP</span>
       </div>
-      <span>Adobe<br>Photoshop</span>
-    </div>
 
-    <div class="expertise-item">
-      <div class="chart-container">
-        <canvas id="chartIllustrator"></canvas>
+      <div class="expertise-item">
+        <div class="chart-box">
+          <canvas id="chartIllustrator"></canvas>
+        </div>
+        <span>ADOBE<br>ILLUSTRATOR</span>
       </div>
-      <span>Adobe<br>Illustrator</span>
-    </div>
 
-    <div class="expertise-item">
-      <div class="chart-container">
-        <canvas id="chartInDesign"></canvas>
+      <div class="expertise-item">
+        <div class="chart-box">
+          <canvas id="chartInDesign"></canvas>
+        </div>
+        <span>ADOBE<br>INDESIGN</span>
       </div>
-      <span>Adobe<br>InDesign</span>
-    </div>
 
-    <div class="expertise-item">
-      <div class="chart-container">
-        <canvas id="chartPowerPoint"></canvas>
+      <div class="expertise-item">
+        <div class="chart-box">
+          <canvas id="chartPowerPoint"></canvas>
+        </div>
+        <span>POWER<br>POINT</span>
       </div>
-      <span>Power<br>Point</span>
+
     </div>
   </div>
 </section>

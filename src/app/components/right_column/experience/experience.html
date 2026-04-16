@@ -1,18 +1,20 @@
-<section class="exp-section">
-  <div class="section-header">
-    <h2>ДОСВІД</h2>
-    <i class="fa-solid fa-chevron-down"></i>
+<section class="collapsible-section">
+  <div class="section-header" (click)="toggleSection()">
+    <h3>EXPERIENCE</h3>
+    <span class="arrow-icon" [class.rotated]="!isOpen">▲</span>
   </div>
-  <div class="content">
-    @for (job of jobs; track job.position) {
-      <div class="job-item">
-        <h3>{{ job.position }}</h3>
-        <div class="meta">
-          <span class="tag">{{ job.tag }}</span>
-          <span class="company">{{ job.company }}</span>
-        </div>
-        <p>{{ job.description }}</p>
+
+  <div class="experience-list" *ngIf="isOpen">
+    <div class="experience-item" *ngFor="let job of jobs">
+      <h4 class="position">{{ job.position }}</h4>
+      <div class="job-meta">
+        <span class="badge">{{ job.tag }}</span>
+        <span class="company">{{ job.company }}</span>
       </div>
-    }
+      <ul class="job-description">
+        <li>{{ job.description }}</li>
+      </ul>
+      
+    </div>
   </div>
 </section>

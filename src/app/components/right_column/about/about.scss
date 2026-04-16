@@ -1,27 +1,18 @@
-// about.scss
-.about-me {
-  h2 {
-    display: flex;
-    justify-content: space-between; // Стрілочка праворуч
-    align-items: center;
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #2c2c2c;
-    border-bottom: 2px solid #e0e0e0; // Сіра лінія під заголовком
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    cursor: pointer;
+.about-section {
+  margin-bottom: 35px;
 
-    i {
-      color: #e86142; // Помаранчева стрілочка
-      font-size: 14px;
-    }
+  h3 {
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 5px;
   }
 
   p {
-    font-size: 15px;
+    font-size: 14px;
     color: #666;
-    line-height: 1.8; // Комфортний відступ між рядками
+    line-height: 1.6;
+    margin: 0;
   }
 }

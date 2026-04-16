@@ -1,11 +1,12 @@
-<section class="hobbies">
-    <h3>HOBBIES</h3>
-    <div class="hobbies-list">
-        @for (hobby of hobbies; track hobby.name) {
-            <div class="hobby-item">
-                <i class="fa-solid" [class]="hobby.icon"></i>
-                <span>{{ hobby.name }}</span>
-            </div>
-        }
+<div class="hobbies-container" *ngIf="hobbies && hobbies.length > 0">
+  <h3>HOBBIES</h3>
+  
+  <div class="hobbies-list">
+    <div class="hobby-item" *ngFor="let hobby of hobbies">
+      <div class="icon-circle">
+        <i class="fas" [ngClass]="hobby.icon"></i>
+      </div>
+      <span>{{ hobby.name }}</span>
     </div>
-</section>
+  </div>
+</div>

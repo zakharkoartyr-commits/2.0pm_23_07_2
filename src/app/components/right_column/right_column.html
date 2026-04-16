@@ -1,18 +1,51 @@
-<main class="right-column-wrapper">
+<div class="right-column-wrapper">
   <header class="main-header">
     <h1>
-      {{ firstName }}<br>
-      <span class="last-name">{{ lastName }}</span>
+      <span>{{ resumeData?.personalData?.firstName }}</span>
+      <span class="last-name">{{ resumeData?.personalData?.lastName }}</span>
     </h1>
-    
     <div class="job-title-container">
       <div class="orange-line"></div>
-      <p class="job-title">UI DESIGNER</p>
+      <p class="job-title">{{ resumeData?.personalData?.jobTitle }}</p>
     </div>
   </header>
 
-  <app-about></app-about>
+  <app-about [text]="resumeData?.about"></app-about>
+
   <app-education></app-education>
-  <app-experience [jobs]="jobsData"></app-experience>
+
+  <app-experience [jobs]="resumeData?.experience"></app-experience>
+
   <app-expertise></app-expertise>
-</main>
+
+  <section class="collapsible-section">
+    <div class="section-header" (click)="toggleSection('contact')">
+      <h3>CONTACT ME</h3>
+      <span class="arrow-icon" [class.rotated]="sections.contact">▼</span>
+    </div>
+    
+    <div class="section-content" *ngIf="sections.contact">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" formControlName="name" placeholder="Enter your name">
+          <small class="error" *ngIf="submitted && contactForm.get('name')?.invalid">
+            Min 3 symbol
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" formControlName="email" placeholder="example@mail.com">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea formControlName="message" placeholder="Your message..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">SEND MESSAGE (POST)</button>
+      </form>
+    </div>
+  </section>
+</div>

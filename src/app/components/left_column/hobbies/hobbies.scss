@@ -1,24 +1,40 @@
-// hobbies.scss
-.hobbies {
-  h3 { font-weight: 800; margin-bottom: 20px; }
-  
+.hobbies-container {
+  margin-bottom: 35px;
+
+  h3 {
+    font-weight: 800;
+    margin-bottom: 35px; // Ось цей відступ, щоб не злипалося
+    text-transform: uppercase;
+  }
+
   .hobbies-list {
-    display: flex;           // СТАВИТЬ ІКОНКИ В РЯД
+    display: flex;
     justify-content: space-between;
     text-align: center;
 
     .hobby-item {
-      font-size: 10px;
+      font-size: 11px;
       color: #777;
-      i {
+
+      .icon-circle {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 35px; height: 35px;
+        width: 38px; 
+        height: 38px;
         border: 2px solid #e86142;
         border-radius: 50%;
-        color: #e86142;
-        margin: 0 auto 8px;
+        margin: 0 auto 10px;
+
+        i {
+          color: #e86142;
+          font-size: 16px;
+        }
+      }
+
+      span {
+        display: block;
+        text-transform: capitalize;
       }
     }
   }

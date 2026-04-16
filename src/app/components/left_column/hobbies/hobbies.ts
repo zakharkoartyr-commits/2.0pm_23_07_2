@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // ДОДАЙ ЦЕ
 
 @Component({
   selector: 'app-hobbies',
   standalone: true,
+  imports: [CommonModule], // ДОДАЙ СЮДИ
   templateUrl: './hobbies.html',
   styleUrl: './hobbies.scss'
 })

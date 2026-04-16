@@ -1,11 +1,23 @@
-// photo.scss
 .photo-container {
-  .orange-bar {
-    height: 12px;
-    background-color: #e86142; // Твій помаранчевий
-  }
+  width: 100%; // Фото займає всю ширину сірого полотна
+  position: relative;
+  
+  // Додаємо помаранчеві рамки тільки зверху і знизу
+  border-top: 8px solid #e86142; 
+  border-bottom: 8px solid #e86142;
+  
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
-    width: 100%;
+    width: 100%;       // Фото розтягується на всю ширину
+    height: auto;      // Висота підлаштовується автоматично
     display: block;
+    
+    // Якщо ти хочеш, щоб фото мало фіксовану висоту, але не обрізалося криво:
+    // height: 300px; 
+    // object-fit: cover; // Це "розумне" підлаштування під розмір
   }
 }

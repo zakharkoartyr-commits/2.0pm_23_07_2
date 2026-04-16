@@ -1,0 +1,55 @@
+{
+  "personalData": {
+    "firstName": "JHON",
+    "lastName": "ABIRAR",
+    "jobTitle": "SENIOR UI/UX DESIGNER",
+    "address": "SS Sterrt City/Zip Code - 456",
+    "phone": "+000 123 456 789",
+    "email": "urname@gmail.com",
+    "website": "urwebsitename.com",
+    "reference": {
+      "name": "Sara Taylore",
+      "position": "Director | Company Name",
+      "phone": "+1 234 56789"
+    }
+  },
+  "about": "Lorem ipsum dolor a consectetur adipiscing elitse eiusmod tempor incididunt labore dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo.",
+  "education": [
+    {
+      "major": "ENTER YOUR MAJOR",
+      "university": "Name Of Your University",
+      "years": "2005-2009"
+    },
+    {
+      "major": "ENTER YOUR MAJOR",
+      "university": "Name Of Your University",
+      "years": "2009-2011"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Senior UI Designer",
+      "tag": "PRESENT",
+      "company": "GOOGLE / CALIFORNIA",
+      "description": "Working on material design system and creating user-centered interfaces for global products."
+    },
+    {
+      "position": "Web Developer",
+      "tag": "2017 - 2019",
+      "company": "AMAZON / SEATTLE",
+      "description": "Developed responsive frontend components and optimized web performance for high-traffic pages."
+    }
+  ],
+  "expertise": [
+    { "name": "ADOBE PHOTOSHOP", "level": 90 },
+    { "name": "ADOBE ILLUSTRATOR", "level": 80 },
+    { "name": "ADOBE INDESIGN", "level": 75 },
+    { "name": "POWER POINT", "level": 85 }
+  ],
+  "hobbies": [
+    { "name": "Travel", "icon": "fa-plane" },
+    { "name": "Music", "icon": "fa-headphones" },
+    { "name": "Writing", "icon": "fa-pen-nib" },
+    { "name": "Chess", "icon": "fa-chess-knight" }
+  ]
+}

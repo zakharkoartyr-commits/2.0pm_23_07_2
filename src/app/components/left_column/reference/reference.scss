@@ -1,15 +1,30 @@
-.reference {
+.reference-section {
+  margin-bottom: 35px;
+
   h3 {
+    font-weight: 800;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-weight: 1000;
   }
-  font-size: 15px;
-  margin-bottom: 20px;
-  .small-text {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.4;
+
+  .ref-item {
+    strong {
+      display: block;
+      font-size: 15px;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
+
+      &.phone {
+        margin-top: 5px;
+        color: #333;
+      }
+    }
   }
 }

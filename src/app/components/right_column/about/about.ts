@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'; // Обов'язково додай Input тут
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
-  // Вказуємо назви файлів без слова .component
-  templateUrl: './about.html', 
+  imports: [CommonModule],
+  templateUrl: './about.html',
   styleUrl: './about.scss'
 })
 export class AboutComponent {
-  isOpen = true; // Стан акордеона
+  // Додаємо декоратор @Input, щоб прийняти текст із батьківського компонента
+  @Input() text: string = ''; 
+  
+  isOpen: boolean = true;
 
-  toggle() {
+  toggleSection() {
     this.isOpen = !this.isOpen;
   }
 }
