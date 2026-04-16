@@ -1,40 +1,53 @@
+// hobbies.scss
+
 .hobbies-container {
-  margin-bottom: 35px;
+  margin-top: 30px; // Відступ від попереднього блоку (Reference)
 
   h3 {
-    font-weight: 800;
-    margin-bottom: 35px; // Ось цей відступ, щоб не злипалося
-    text-transform: uppercase;
+    font-family: 'Playfair Display', serif; // Переконайся, що цей шрифт підключено
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 20px !important;
+    color: #000;
   }
 
   .hobbies-list {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap; // Щоб іконки були в один рядок
+    gap: 15px !important; // Відстань між хобі як на другому скріні
+    justify-content: flex-start;
 
     .hobby-item {
-      font-size: 11px;
-      color: #777;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50px; // Фіксована ширина для вирівнювання
 
       .icon-circle {
+        width: 36px !important; // Зменшений розмір кола
+        height: 36px !important;
+        border: 1px solid #e86142 !important; // Тонка лінія
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 38px; 
-        height: 38px;
-        border: 2px solid #e86142;
-        border-radius: 50%;
-        margin: 0 auto 10px;
+        margin-bottom: 6px !important;
 
         i {
+          font-size: 15px !important; // Маленька іконка
           color: #e86142;
-          font-size: 16px;
         }
       }
 
       span {
-        display: block;
-        text-transform: capitalize;
+        font-size: 11px !important;
+        font-weight: 400; // Не жирний
+        color: #666;
+        text-transform: capitalize; // Перша буква велика (Travel, Music)
+        text-align: center;
+        font-family: Arial, sans-serif;
       }
     }
   }

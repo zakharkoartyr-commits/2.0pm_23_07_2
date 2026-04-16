@@ -1,9 +1,8 @@
 <div class="reference-section" *ngIf="ref">
   <h3>REFERENCE</h3>
-  
   <div class="ref-item">
-    <strong>{{ ref.name }}</strong>
-    <p>{{ ref.position }}</p>
-    <p class="phone">T: {{ ref.phone }}</p>
+    <strong>{{ ref.name }} (Loaded via AJAX)</strong>
+    <div class="position">{{ ref.position }}</div>
+    <p class="info">T: {{ ref.phone }}</p>
   </div>
 </div>

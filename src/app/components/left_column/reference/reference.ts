@@ -15,14 +15,15 @@ export class ReferenceComponent implements OnInit {
   constructor(private resumeService: ResumeService) {}
 
   ngOnInit(): void {
-    this.resumeService.getResumeData().subscribe({
-      next: (data: any) => {
-        // Беремо дані саме з поля reference
-        if (data && data.reference) {
-          this.ref = data.reference;
-        }
-      },
-      error: (err) => console.error('Помилка завантаження Reference:', err)
-    });
+  this.resumeService.getResumeData().subscribe({
+    next: (data: any) => {
+      // Виправляємо шлях: додаємо .personalData перед .reference
+      if (data && data.personalData && data.personalData.reference) {
+        this.ref = data.personalData.reference;
+        console.log('Reference завантажено:', this.ref);
+      }
+    },
+    error: (err) => console.error('Помилка завантаження Reference:', err)
+  });
   }
 }

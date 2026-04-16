@@ -1,41 +1,65 @@
-.sidebar-wrapper {
+.left-column {
+  background-color: #f1f2f2;
   height: 100%;
-  background-color: #f2f2f2;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
 
-  // --- ВІДСТУПИ ВІД КРАЇВ (Padding) ---
-  // Перше число - відступ зверху/знизу (наприклад, 45px)
-  // Друге число - відступ зліва/справа (наприклад, 35px)
-  padding: 45px 35px; 
-
-  .address-section {
-    margin-bottom: 30px; // Відступ від адреси до фото
-
-    h3 {
-      color: #e86142;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 5px;
-    }
-    p {
-      font-size: 13px;
-      color: #666;
-    }
+// БЛОК АДРЕСИ - РОБИМО ЯК НА МАКЕТІ
+.address-container {
+  padding: 40px 35px 25px 35px; // Більше простору зверху
+  
+  h3 {
+    color: #e86142 !important; // ПРИМУСОВО ПОМАРАНЧЕВИЙ
+    font-family: Arial, Helvetica, sans-serif !important; // ПРИМУСОВО БЕЗ ЗАСІЧОК
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 5px 0;
   }
 
-  // Щоб фото займало всю доступну ширину після паддінгу
+  p {
+    color: #555;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin: 0;
+  }
+}
+
+// ФОТО З ЛІНІЄЮ
+.photo-container {
+  border-top: 5px solid #e86142; // Та сама помаранчева лінія
+  width: 100%;
+  
   app-photo {
     display: block;
-    margin-left: -35px;  // Тимчасово розширюємо фото назад до країв, 
-    margin-right: -35px; // якщо хочеш, щоб воно було без бічних відступів
-    margin-bottom: 40px;
+    width: 100%;
   }
+}
 
-  .sidebar-content {
-    // Тут додаткові відступи вже не потрібні, бо ми задали їх у sidebar-wrapper
-    display: flex;
-    flex-direction: column;
-    gap: 40px; // Відстань між Contact, Reference та Hobbies
+// КОНТЕНТ НИЖЧЕ
+.sidebar-content {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  ::ng-deep {
+    // Рівняємо всі внутрішні компоненти (Contact, Ref, Hobbies)
+    app-contacts, app-reference, app-hobbies {
+      display: block;
+      padding-left: 35px;
+      padding-right: 35px;
+
+      h3 {
+        color: #2c2c2c;
+        font-family: 'Playfair Display', serif; // Заголовки нижче фото можуть бути з засічками
+        font-size: 18px;
+        font-weight: 900;
+        margin-bottom: 25px;
+      }
+    }
   }
 }
